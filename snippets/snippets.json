@@ -1,0 +1,223 @@
+{
+    "perdix-cleint irf simple page": {
+        "prefix": "!irf-page",
+        "body": [
+            "irf.pageCollection.factory(irf.page(\"\"),",
+            "    [\"$$log\", \"$$q\",\"PageHelper\", \"formHelper\", \"elementsUtils\",\"irfProgressMessage\", \"SessionStore\", \"$$state\", \"$$stateParams\", \"Queries\",",
+            "        function ($$log, $$q,PageHelper, formHelper, Utils,irfProgressMessage, SessionStore, $$state, $$stateParams, Queries) {",
+            "            return {",
+            "                \"type\": \"schema-form\",",
+            "                \"title\": \"\",",
+            "                initialize: function (model, form, formCtrl) {",
+            "                },",
+            "                offline: false,",
+            "                getOfflineDisplayItem: function (item, index) {",
+            "                    return [",
+            "                    ]",
+            "                },",
+            "                eventListeners: {",
+            "                    ",
+            "                },",
+            "                form: [",
+            "                  {",
+            "                      \"type\":\"box\",",
+            "                      \"title\":\"SAMPLE_BOX\",",
+            "                      \"items\":[",
+            "                          {",
+            "                              \"type\":\"string\",",
+            "                              \"title\":\"Title\",",
+            "                          }",
+            "                      ]",
+            "                  },",
+            "                  {",
+            "                      \"type\":\"actionbox\",",
+            "                      \"items\":[",
+            "                          {",
+            "                            \"type\":\"button\",",
+            "                            \"title\":\"SUBMIT\",",
+            "                            \"onClick\":\"actions.submit(model,form,formCtrl)\",",
+            "                          },",
+            "                          {",
+            "                            \"type\":\"button\",",
+            "                            \"title\":\"SAVE\",",
+            "                            \"onClick\":\"actions.submit(model,form,formCtrl)\"",
+            "                          }",
+            "                      ]",
+            "                  }",
+            "                ],",
+            "",
+            "                schema: function () {",
+            "                    ",
+            "                },",
+            "                actions: {",
+            "                    save: function (model, form, formCtrl) {",
+            "                    },",
+            "                    submit: function (model, form, formCtrl) {",
+            "                    }",
+            "                }",
+            "            };",
+            "        }",
+            "    ]);",
+            ""
+        ]
+    },
+    "perdix-client irf simple bundle page": {
+        "prefix": "!irf-page -bundle",
+        "body": [
+
+        ]
+    },
+    "perdix-client irf simple queue page": {
+        "prefix": "!irf-page -queue",
+        "body": [
+
+        ]
+    },
+    "perdix-client irf define page": {
+        "prefix": "!irf-d-page",
+        "body": [
+
+        ]
+    },
+    "perdix-client irf define bundle page": {
+        "prefix": "!irf-d-page -bundle",
+        "body": [
+
+        ]
+    },
+    "perdix-client irf define queue page": {
+        "prefix": "!irf-d-page -queue",
+        "body": [
+
+        ]
+    },
+    "perdix-client irf type lov": {
+        "prefix": "!irf-t -lov",
+        "body": [
+            "{",
+            "    key: \"$1\",",
+            "    type: \"lov\",",
+            "    autolov: true,",
+            "    title: \"\",",
+            "    bindMap: {},",
+            "    inputMap: {},",
+            "    outputMap:{},",
+            "    searchHelper: formHelper,",
+            "    search: function (inputModel, form, model, context) {",
+            "       var out = [];",
+            "        return {",
+            "            headers: {",
+            "                \"x-total-count\": out.length",
+            "            },",
+            "            body: out",
+            "        };",
+            "    },",
+            "    onSelect: function (valueObj, model, context) {",
+            "        ",
+            "    },",
+            "    getListDisplayItem: function (item, index) {",
+            "        return [",
+            "            item.name",
+            "        ];",
+            "    }",
+            "},",
+            ""
+        ]
+    },
+    "perdix-client irf type array": {
+        "prefix": "!irf-t -array",
+        "body": [
+            "{",
+            "    key:\"$1\",",
+            "    type:\"array\",",
+            "    startEmpty:true,",
+            "    title:\"\",",
+            "    // titleExpr:\"\",",
+            "    onArrayAdd: function(value, form, model, formCtrl, event) {",
+            "",
+            "    },",
+            "    items:[",
+            "        {",
+            "            type:\"string\",",
+            "            title:\"\",",
+            "            key:\"\",",
+            "        }",
+            "    ]",
+            "},",
+            ""
+        ]
+    },
+    "perdix-client irf type static array": {
+        "prefix": "!irf-t -static-array",
+        "body": [
+            "{",
+            "    \"key\": \"$1\",",
+            "    \"type\": \"array\",",
+            "    \"title\": \"\",",
+            "    // \"titleExpr\":\"\",",
+            "    \"add\": null,",
+            "    \"remove\": null,",
+            "    \"view\": \"fixed\",",
+            "    \"items\":[",
+            "",
+            "    ]",
+            "},",
+            ""
+        ]
+    },
+    "perdix-client irf type radios": {
+        "prefix": "!irf-t -radios",
+        "body": [
+            "{",
+            "    \"title\": \"$1\",",
+            "    \"type\": \"radios\",",
+            "    \"key\": \"\",",
+            "    \"titleMap\": [",
+            "        {value:\"sample\",name:\"sample\"}",
+            "    ],",
+            "    // \"enumCode\":\"\",",
+            "    onChange: function (valueObj, form, model) {",
+            "    }",
+            "}",
+            ""
+        ]
+    },
+    "env-mig": {
+        "prefix": "!env-kgfs-mig",
+        "body": [
+            "var irf = irf || {};",
+            "irf.BASE_URL = 'http://mig.kgfs.perdix.co.in:8080/perdix-server';",
+            "irf.MANAGEMENT_BASE_URL = 'http://mig.kgfs.perdix.co.in:8081/management';",
+            "irf.FORM_DOWNLOAD_URL = 'http://mig.kgfs.perdix.co.in:8080/forms/formPrint.jsp';",
+            "irf.BI_BASE_URL = 'http://mig.kgfs.perdix.co.in:8081/bi';",
+            "irf.AUDIT_API_URL = 'http://kgfsuat2.perdix.co.in:82';",
+            "irf.CAMS_EKYC_INTEG_URL = 'https://eiscuat1.camsonline.com/ekycuat3/eKYCVal_Aadhar.aspx';",
+            "irf.FWR_BASE_URL = 'http://perdix.kgfs.co.in/fwr_mig';"
+        ]
+    },
+    "env-sit": {
+        "prefix": "!env-kgfs-sit",
+        "body": [
+            "var irf = irf || {};",
+            "irf.BASE_URL = 'http://sit.perdix.co.in:8080/sit_kgfs_perdix-server';",
+            "irf.MANAGEMENT_BASE_URL = 'http://sit.perdix.co.in:8081/sit_kgfs_management';",
+            "irf.FORM_DOWNLOAD_URL = 'http://sit.perdix.co.in:8080/sit_kgfs_forms/formPrint.jsp';",
+            "irf.BI_BASE_URL = 'http://sit.perdix.co.in:8081/sit_kgfs_bi';",
+            "irf.AUDIT_API_URL = 'http://kgfsuat2.perdix.co.in:82';",
+            "irf.CAMS_EKYC_INTEG_URL = 'https://eiscuat1.camsonline.com/ekycuat3/eKYCVal_Aadhar.aspx';",
+            "irf.FWR_BASE_URL = 'http://perdix.kgfs.co.in/fwr_sit';"
+        ]
+    },
+    "env-prod": {
+        "prefix": "!env-kgfs-prod",
+        "body": [
+            "var irf = irf || {};",
+            "irf.BASE_URL = 'http://produat.kgfs.perdix.co.in:8080/perdix-server_produat';",
+            "irf.MANAGEMENT_BASE_URL = 'http://produat.kgfs.perdix.co.in:8081/management_produat';",
+            "irf.FORM_DOWNLOAD_URL = 'http://produat.kgfs.perdix.co.in:8080/forms_produat/formPrint.jsp';",
+            "irf.BI_BASE_URL = 'http://produat.kgfs.perdix.co.in:8081/bi_produat';",
+            "irf.PSYCHOMETRIC_BASE_URL = '';",
+            "irf.FWR_BASE_URL = 'http://perdix.kgfs.co.in/fwr_produat';"
+        ]
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "name": "irf-code-snippets",
+    "displayName": "irf-code-snippets",
+    "description": "irf-extensions",
+    "publisher": "Harish",
+    "version": "1.0.0",
+    "engines": {
+        "vscode": "^1.30.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Harish321"
+    },
+    "icon": "icon.png",
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "javascript",
+                "path": "./snippets/snippets.json"
+            }
+        ]
+    }
+}
